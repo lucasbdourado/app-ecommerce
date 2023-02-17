@@ -4,7 +4,7 @@
             <li><nuxt-link :to="{ name: 'index' }" class="header__navbar-item">Home</nuxt-link></li>
         </ul>
         <div class="header__user" v-if="$auth.loggedIn">
-            <p>Olá, {{ $auth.user.name }}</p>
+            <p>Olá, <nuxt-link :to="{ name: 'profile-information' }">{{ $auth.user.first_name }}</nuxt-link></p>
             <a href="#" class="header__navbar-item" @click.prevent="logout">Logout</a>
         </div>
 
