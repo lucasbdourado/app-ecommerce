@@ -35,11 +35,10 @@ export default {
     data() {
         return {
             form: {
-                first_name: this.$auth.user.first_name,
-                last_name: this.$auth.user.last_name,
-                name: this.$auth.user.name,
-                email: this.$auth.user.email,
-                phone: this.$auth.user.phone,
+                first_name: this.$auth.user?.first_name,
+                last_name: this.$auth.user?.last_name,
+                email: this.$auth.user?.email,
+                phone: this.$auth.user?.phone,
             }
         }
     },

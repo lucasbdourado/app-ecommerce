@@ -3,13 +3,13 @@
         <div class="form__group">
             <label class="form__label" for="email">E-Mail</label>
             <input class="form__input" type="email" name="email" id="email" v-model="form.email">
-        <p class="form__error"></p>
+            <p class="form__error"></p>
         </div>
 
         <div class="form__group">
-        <label class="form__label" for="password">Senha</label>
-        <input class="form__input" type="password" name="password" id="password" v-model="form.password">
-        <p class="form__error"></p>
+          <label class="form__label" for="password">Senha</label>
+          <input class="form__input" type="password" name="password" id="password" v-model="form.password">
+          <p class="form__error"></p>
         </div>
 
         <div class="form__group">
