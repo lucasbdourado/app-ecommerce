@@ -30,7 +30,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     nav{
         padding: 0 20px;
         display: flex;
