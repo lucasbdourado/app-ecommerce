@@ -50,7 +50,7 @@
         </div>
 
         <div class="form__group">
-        <button class="form__button" type="submit">Registrar</button>
+          <button class="form__button" type="submit">Registrar</button>
         </div>
   </form>
 </template>
