@@ -37,7 +37,7 @@ import Category from '~/components/Category.vue';
     async mounted() {
         try {
             this.categories = await this.$axios.get("/api/address/user");
-            console.log(this.categories.data);
+            
             this.loaded = true;
         }
         catch (e) {

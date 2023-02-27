@@ -25,38 +25,38 @@
                 <h1>Especificação</h1>
                 
                 <div class="form__group">
-                    <label class="form__label" for="marca">Marca</label>
-                    <input class="form__input" type="text" name="marca" id="marca" v-model="product.data.marca">
+                    <label class="form__label" for="brand">Marca</label>
+                    <input class="form__input" type="text" name="brand" id="brand" v-model="product.data.brand">
                     <p class="form__error"></p>
                 </div>
 
                 <div class="form__group">
-                    <label class="form__label" for="altura">Altura (Produto)</label>
-                    <input class="form__input" type="text" name="altura" id="altura" v-model="product.data.altura">
+                    <label class="form__label" for="height">Altura (Produto)</label>
+                    <input class="form__input" type="text" name="height" id="height" v-model="product.data.height">
                     <p class="form__error"></p>
                 </div>
 
                 <div class="form__group">
-                    <label class="form__label" for="largura">Largura (Produto)</label>
-                    <input class="form__input" type="text" name="largura" id="largura" v-model="product.data.largura">
+                    <label class="form__label" for="width">Largura (Produto)</label>
+                    <input class="form__input" type="text" name="width" id="width" v-model="product.data.width">
                     <p class="form__error"></p>
                 </div>
 
                 <div class="form__group">
-                    <label class="form__label" for="comprimento">Comprimento (Produto)</label>
-                    <input class="form__input" type="text" name="comprimento" id="comprimento" v-model="product.data.comprimento">
+                    <label class="form__label" for="length_prod">Comprimento (Produto)</label>
+                    <input class="form__input" type="text" name="length_prod" id="length_prod" v-model="product.data.length_prod">
                     <p class="form__error"></p>
                 </div>
 
                 <div class="form__group">
-                    <label class="form__label" for="peso">Peso</label>
-                    <input class="form__input" type="text" name="peso" id="peso" v-model="product.data.peso">
+                    <label class="form__label" for="weight">Peso</label>
+                    <input class="form__input" type="text" name="weight" id="weight" v-model="product.data.weight">
                     <p class="form__error"></p>
                 </div>
 
                 <div class="form__group">
-                    <label class="form__label" for="valor">Preço</label>
-                    <input class="form__input" type="text" name="valor" id="valor" v-model="product.data.valor">
+                    <label class="form__label" for="price">Preço</label>
+                    <input class="form__input" type="text" name="price" id="price" v-model="product.data.price">
                     <p class="form__error"></p>
                 </div>
 
@@ -85,13 +85,12 @@ export default {
             data: {
                 name: '',
                 description: '',
-                category_id: '',
-                marca: '',
-                altura: '',
-                largura: '',
-                comprimento: '',
-                peso: '',
-                valor: '',
+                brand: '',
+                height: '',
+                width: '',
+                length_prod: '',
+                weight: '',
+                price: '',
                 category_id: '',
                 images: {}
             }
@@ -112,12 +111,12 @@ export default {
                 const formData = new FormData()
                 formData.append('name', this.product.data.name)
                 formData.append('description', this.product.data.description)
-                formData.append('marca', this.product.data.marca)
-                formData.append('altura', this.product.data.altura)
-                formData.append('largura', this.product.data.largura)
-                formData.append('comprimento', this.product.data.comprimento)
-                formData.append('peso', this.product.data.peso)
-                formData.append('valor', this.product.data.valor)
+                formData.append('brand', this.product.data.brand)
+                formData.append('height', this.product.data.height)
+                formData.append('width', this.product.data.width)
+                formData.append('length_prod', this.product.data.length_prod)
+                formData.append('weight', this.product.data.weight)
+                formData.append('price', this.product.data.price)
                 formData.append('category_id', this.product.data.category_id)
                 for (let i = 0; i < this.product.data.images.length; i++) {
                     console.log(i)

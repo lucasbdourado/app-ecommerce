@@ -3,46 +3,46 @@
         <div class="modal__container">
             <form @submit.prevent="updateAddress" class="modal__form">
                 <div class="form__group">
-                    <label class="form__label" for="cep">CEP</label>
-                    <input class="form__input" type="text" name="cep" v-on:focus="getCEP" v-on:blur="handleCEP" id="cep"
-                        v-model="address.data.cep">
+                    <label class="form__label" for="postal_code">CEP</label>
+                    <input class="form__input" type="text" name="postal_code" v-on:focus="getCEP" v-on:blur="handleCEP" id="cep"
+                        v-model="address.data.postal_code">
                     <p class="form__error"></p>
                 </div>
 
                 <div class="form__group">
-                    <label class="form__label" for="uf">UF</label>
-                    <input class="form__input" type="text" name="uf" id="uf" v-model="address.data.uf">
+                    <label class="form__label" for="state">UF</label>
+                    <input class="form__input" type="text" name="state" id="state" v-model="address.data.state">
                     <p class="form__error"></p>
                 </div>
 
                 <div class="form__group">
-                    <label class="form__label" for="cidade">Cidade</label>
-                    <input class="form__input" type="text" name="cidade" id="cidade" v-model="address.data.cidade">
+                    <label class="form__label" for="city">Cidade</label>
+                    <input class="form__input" type="text" name="city" id="city" v-model="address.data.city">
                     <p class="form__error"></p>
                 </div>
 
                 <div class="form__group">
-                    <label class="form__label" for="bairro">Bairro</label>
-                    <input class="form__input" type="text" name="bairro" id="bairro" v-model="address.data.bairro">
+                    <label class="form__label" for="neighborhood">Bairro</label>
+                    <input class="form__input" type="text" name="neighborhood" id="neighborhood" v-model="address.data.neighborhood">
                     <p class="form__error"></p>
                 </div>
 
                 <div class="form__group">
-                    <label class="form__label" for="rua">Rua</label>
-                    <input class="form__input" type="text" name="rua" id="rua" v-model="address.data.rua">
+                    <label class="form__label" for="street">Rua</label>
+                    <input class="form__input" type="text" name="street" id="street" v-model="address.data.street">
                     <p class="form__error"></p>
                 </div>
 
                 <div class="form__group">
-                    <label class="form__label" for="numero">Numero</label>
-                    <input class="form__input" type="text" name="numero" id="numero" v-model="address.data.numero">
+                    <label class="form__label" for="number">Numero</label>
+                    <input class="form__input" type="text" name="number" id="number" v-model="address.data.number">
                     <p class="form__error"></p>
                 </div>
 
                 <div class="form__group">
-                    <label class="form__label" for="complemento">Complemento</label>
-                    <input class="form__input" type="text" name="complemento" id="complemento"
-                        v-model="address.data.complemento">
+                    <label class="form__label" for="complement">Complemento</label>
+                    <input class="form__input" type="text" name="complement" id="complement"
+                        v-model="address.data.complement">
                     <p class="form__error"></p>
                 </div>
 
@@ -65,13 +65,13 @@ export default {
             oldCep: '',
 
             data: {
-                cep: '',
-                uf: '',
-                cidade: '',
-                bairro: '',
-                rua: '',
-                numero: '',
-                complemento: '',
+                postal_code: '',
+                state: '',
+                city: '',
+                neighborhood: '',
+                street: '',
+                number: '',
+                complement: '',
             }
         }
     }),
@@ -93,10 +93,10 @@ export default {
                 }
             });
 
-            this.address.data.uf = addressData.uf
-            this.address.data.cidade = addressData.localidade
-            this.address.data.bairro = addressData.bairro
-            this.address.data.rua = addressData.logradouro
+            this.address.data.state = addressData.uf
+            this.address.data.city = addressData.localidade
+            this.address.data.neighborhood = addressData.bairro
+            this.address.data.street = addressData.logradouro
 
             this.$forceUpdate();
         },
@@ -141,7 +141,7 @@ export default {
             if(!(this.$route.params.address.id)){
                 return this.$router.push({ name: 'address'})
             }
-            this.address = await this.$axios.get('/api/address/' + this.$route.params.address.id + '/edit')
+            this.address = await this.$axios.get('/api/address/' + this.$route.params.id + '/edit')
 
             this.loaded = true;
         } catch (e){

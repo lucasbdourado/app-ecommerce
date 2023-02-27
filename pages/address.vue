@@ -8,8 +8,8 @@
 
             <nuxt-link :to="{ name: 'address-create' }"> > Criar Endereço </nuxt-link>
             
-            <div v-for="add in address.data">
-                <li>{{ add.cidade }} - {{ add.bairro }}, {{ add.rua }}, Nº {{ add.numero }}<div><nuxt-link :to="{ name: 'address-edit', params: {address: add}}">Editar</nuxt-link><nuxt-link :to="{ name: 'address-delete', params: {address: add}}">Excluir</nuxt-link></div></li>
+            <div v-for="address in addresses.data">
+                <li>{{ address.city }} - {{ address.neighborhood }}, {{ address.street }}, Nº {{ address.number }}<div><nuxt-link :to="{ name: 'address-edit', params: {id: address.id}}">Editar</nuxt-link><nuxt-link :to="{ name: 'address-delete', params: {id: address.id}}">Excluir</nuxt-link></div></li>
             </div>
             <NuxtChild/>
         </section>
@@ -23,21 +23,21 @@
 
         data: () => ({
             loaded: false,
-            address: {
+            addresses: {
                 data:{}
             }
         }),
 
         methods: {
             refreshData(address) {
-                this.address.data = address.data
+                this.addresses.data = address.data
             },
         },
         async mounted() {
 
             try{
 
-                this.address = await this.$axios.get('/api/address')
+                this.addresses = await this.$axios.get('/api/address')
 
                 this.loaded = true;
             } catch (e){

@@ -57,7 +57,7 @@ export default {
                 return this.$router.push({ name: 'product'})
             }
 
-            this.product = await this.$axios.get('/api/products/' + this.$route.params.product.id)
+            this.product = await this.$axios.get('/api/products/' + this.$route.params.id)
 
             this.loaded = true;
         } catch (e){
