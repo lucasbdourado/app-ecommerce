@@ -14,8 +14,8 @@
         </div>
 
         <div class="form__group">
-            <label class="form__label" for="cpf">CPF</label>
-            <input class="form__input" type="text" name="cpf" id="cpf" v-model="form.cpf">
+            <label class="form__label" for="identity">CPF</label>
+            <input class="form__input" type="text" name="identity" id="identity" v-model="form.identity">
           <p class="form__error"></p>
         </div>
 
@@ -32,8 +32,8 @@
         </div>
         
         <div class="form__group">
-            <label class="form__label" for="data_nasc">Data de Nascimento</label>
-            <input class="form__input" type="date" name="data_nasc" id="data_nasc" v-model="form.data_nasc">
+            <label class="form__label" for="dob">Data de Nascimento</label>
+            <input class="form__input" type="date" name="dob" id="dob" v-model="form.dob">
           <p class="form__error"></p>
         </div>
 
@@ -62,10 +62,10 @@ export default {
             form: {
                 first_name: '',
                 last_name: '',
-                cpf: '',
+                identity: '',
                 email: '',
                 phone: '',
-                data_nasc: '',
+                dob: '',
                 password: '',
                 password_confirmation: '',
             }

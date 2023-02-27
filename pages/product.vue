@@ -9,7 +9,7 @@
             <nuxt-link :to="{ name: 'product-create' }"> > Criar Produto </nuxt-link>
             
             <div v-for="product in products.data">
-                <li>{{ product.name }} - <nuxt-link :to="{ name: 'product-edit', params: {id: product.id}}">Editar</nuxt-link><nuxt-link :to="{ name: 'product-delete', params: {product: product}}">Excluir</nuxt-link> <div v-for="image in product.images"><img :src="`http://localhost:8000/storage/${image.url_name}`" alt="" srcset="" height="150px" width="150px"></div></li>
+                <li>{{ product.name }} - <nuxt-link :to="{ name: 'product-edit', params: {id: product.id}}">Editar</nuxt-link><nuxt-link :to="{ name: 'product-delete', params: {id: product.id}}">Excluir</nuxt-link> <div v-for="image in product.images"><img :src="`http://localhost:8000/storage/${image.url_name}`" alt="" srcset="" height="150px" width="150px"></div></li>
             </div>
             <NuxtChild/>
         </section>

@@ -20,6 +20,46 @@
                     <p class="form__error"></p>
                 </div>
 
+                <hr>
+
+                <h1>Especificação</h1>
+                
+                <div class="form__group">
+                    <label class="form__label" for="brand">Marca</label>
+                    <input class="form__input" type="text" name="brand" id="brand" v-model="product.data.brand">
+                    <p class="form__error"></p>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="height">Altura (Produto)</label>
+                    <input class="form__input" type="text" name="height" id="height" v-model="product.data.height">
+                    <p class="form__error"></p>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="width">Largura (Produto)</label>
+                    <input class="form__input" type="text" name="width" id="width" v-model="product.data.width">
+                    <p class="form__error"></p>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="length_prod">Comprimento (Produto)</label>
+                    <input class="form__input" type="text" name="length_prod" id="length_prod" v-model="product.data.length_prod">
+                    <p class="form__error"></p>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="weight">Peso</label>
+                    <input class="form__input" type="text" name="weight" id="weight" v-model="product.data.weight">
+                    <p class="form__error"></p>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="price">Preço</label>
+                    <input class="form__input" type="text" name="price" id="price" v-model="product.data.price">
+                    <p class="form__error"></p>
+                </div>
+
                 <div class="form__group">
                     <label class="form__label" for="images">Fotos</label>
                     <input class="form__input" type="file" name="images" id="images" v-on:change="handleImages" multiple>
@@ -45,6 +85,12 @@ export default {
             data: {
                 name: '',
                 description: '',
+                brand: '',
+                height: '',
+                width: '',
+                length_prod: '',
+                weight: '',
+                price: '',
                 category_id: '',
                 images: {}
             }

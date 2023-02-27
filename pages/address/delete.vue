@@ -2,7 +2,7 @@
     <div class="modal" >
         <div class="modal__container">
             <form class="modal__form" v-if="loaded" @submit.prevent="deleteAddress">
-                <h3>Deseja excluir o endereço: {{ address.data.cidade }} - {{ address.data.uf }}, {{ address.data.rua }},  Nº {{ address.data.numero }} - {{ address.data.cep }}?</h3>
+                <h3>Deseja excluir o endereço: {{ address.data.city }} - {{ address.data.state }}, {{ address.data.street }},  Nº {{ address.data.number }} - {{ address.data.postal_code }}?</h3>
 
                 <div class="form__group">
                     <button class="form__button" type="submit">Sim</button>
@@ -23,13 +23,13 @@ export default {
         address: {
             oldCep: '',
             data: {
-                cep: '',
-                uf: '',
-                cidade: '',
-                bairro: '',
-                rua: '',
-                numero: '',
-                complemento: '',
+                postal_code: '',
+                state: '',
+                city: '',
+                neighborhood: '',
+                street: '',
+                number: '',
+                complement: '',
             }
         }
     }),
@@ -63,7 +63,7 @@ export default {
                 return this.$router.push({ name: 'address'})
             }
 
-            this.address = await this.$axios.get('/api/address/' + this.$route.params.address.id)
+            this.address = await this.$axios.get('/api/address/' + this.$route.params.id)
 
             this.loaded = true;
         } catch (e){

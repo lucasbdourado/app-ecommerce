@@ -12,7 +12,7 @@
                     </div>
 
                     <h4>{{ product.name }}</h4>
-                    <p>{{ product.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}</p>
+                    <p>{{ product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) }}</p>
                 </div>
             </div>
         </main>
